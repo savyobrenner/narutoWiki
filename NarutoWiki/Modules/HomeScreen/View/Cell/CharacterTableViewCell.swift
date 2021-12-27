@@ -24,7 +24,8 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var cellImageView: UIImageView = {
         let cellImageView = UIImageView()
-        cellImageView.image = .init(named: "header")
+        cellImageView.image = .init(named: "no-photo")
+        cellImageView.contentMode = .redraw
         cellImageView.layer.cornerRadius = 40
         cellImageView.clipsToBounds = true
         cellImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,9 +86,27 @@ class CharacterTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        characterDescription.text = "Undefined, Private information, BloodType - Undefined"
+        characterName.text = "Private Character"
+        roleDescription.text = "Character Unemployed"
+        cellImageView.image = .init(named: "no-photo")
+    }
+    
     func setupCell(character: Character) {
         characterDescription.text = "\(character.info?.sex?.rawValue ?? ""), \(character.info?.age ?? "Private information"), BloodType - \(character.info?.bloodType?.rawValue ?? "Undefined")"
         characterName.text = character.name ?? "Private Character"
         roleDescription.text = character.info?.role ?? "Character Unemployed"
+        downloadImage(from: character.images?.first)
+    }
+    
+    private func downloadImage(from url: String?) {
+        guard let urlString = url, let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.cellImageView.image = UIImage(data: data)
+            }
+        }.resume()
     }
 }
