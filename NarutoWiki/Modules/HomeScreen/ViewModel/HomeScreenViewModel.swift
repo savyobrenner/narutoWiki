@@ -9,9 +9,21 @@
 
 import UIKit
 
-final class HomeScreenViewModel {
+final class HomeScreenViewModel: NSObject {
     
 }
 
 // MARK: - Extensions
 extension HomeScreenViewModel: HomeScreenViewModelProtocol { }
+
+// MARK: - TableView
+extension HomeScreenViewModel: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+}

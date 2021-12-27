@@ -34,6 +34,7 @@ final class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupTableView()
     }
     
     // MARK: - Class Configurations
@@ -50,6 +51,12 @@ final class HomeScreenViewController: UIViewController {
             viewInstance.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             viewInstance.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
+    }
+    
+    private func setupTableView() {
+        viewInstance.tableView.delegate = viewModel
+        viewInstance.tableView.dataSource = viewModel
+        viewInstance.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.reuseIdentifier)
     }
 }
 

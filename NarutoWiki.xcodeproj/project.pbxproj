@@ -22,6 +22,8 @@
 		2968CB452779462A00E6304A /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB442779462A00E6304A /* CharactersRequest.swift */; };
 		2968CB472779490200E6304A /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB462779490200E6304A /* ResponseModel.swift */; };
 		2968CB4927794B6800E6304A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB4827794B6800E6304A /* ErrorModel.swift */; };
+		2968CB4E27794DC100E6304A /* HomeScreenServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB4D27794DC100E6304A /* HomeScreenServices.swift */; };
+		2968CB512779605900E6304A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB502779605900E6304A /* CharacterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		2968CB442779462A00E6304A /* CharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
 		2968CB462779490200E6304A /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		2968CB4827794B6800E6304A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		2968CB4D27794DC100E6304A /* HomeScreenServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenServices.swift; sourceTree = "<group>"; };
+		2968CB502779605900E6304A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +109,9 @@
 		2968CB292779350500E6304A /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				2968CB2A2779355A00E6304A /* HomeScreenViewModelProtocol.swift */,
-				2968CB2B2779355A00E6304A /* HomeScreenViewController.swift */,
-				2968CB2D2779355A00E6304A /* HomeScreenView.swift */,
-				2968CB2E2779355A00E6304A /* HomeScreenViewModel.swift */,
+				2968CB4B27794DA200E6304A /* Service */,
+				2968CB4A27794D9C00E6304A /* View */,
+				2968CB4C27794DA500E6304A /* ViewModel */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -156,6 +159,41 @@
 				2968CB4827794B6800E6304A /* ErrorModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2968CB4A27794D9C00E6304A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB4F2779604000E6304A /* Cell */,
+				2968CB2D2779355A00E6304A /* HomeScreenView.swift */,
+				2968CB2B2779355A00E6304A /* HomeScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2968CB4B27794DA200E6304A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB4D27794DC100E6304A /* HomeScreenServices.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2968CB4C27794DA500E6304A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB2A2779355A00E6304A /* HomeScreenViewModelProtocol.swift */,
+				2968CB2E2779355A00E6304A /* HomeScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2968CB4F2779604000E6304A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB502779605900E6304A /* CharacterTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2968CB4E27794DC100E6304A /* HomeScreenServices.swift in Sources */,
 				2968CB14277934CA00E6304A /* AppDelegate.swift in Sources */,
+				2968CB512779605900E6304A /* CharacterTableViewCell.swift in Sources */,
 				2968CB332779355A00E6304A /* HomeScreenViewModel.swift in Sources */,
 				2968CB36277940B200E6304A /* Character.swift in Sources */,
 				2968CB302779355A00E6304A /* HomeScreenViewController.swift in Sources */,

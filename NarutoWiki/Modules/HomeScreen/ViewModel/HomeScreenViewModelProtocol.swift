@@ -8,7 +8,8 @@
 //
 
 import Foundation
+import UIKit
 
-protocol HomeScreenViewModelProtocol { }
+protocol HomeScreenViewModelProtocol: UITableViewDelegate, UITableViewDataSource { }
 
 
