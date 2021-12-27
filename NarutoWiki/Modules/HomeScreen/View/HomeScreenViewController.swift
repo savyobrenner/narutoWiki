@@ -35,6 +35,7 @@ final class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupTableView()
+        bindUI()
         viewModel.viewDidLoad()
     }
     
@@ -54,14 +55,18 @@ final class HomeScreenViewController: UIViewController {
         ])
     }
     
+    private func bindUI() {
+        viewModel.reloadTableView = { [self] in
+            DispatchQueue.main.async {
+                viewInstance.tableView.reloadData()
+            }
+        }
+    }
+    
     private func setupTableView() {
         viewInstance.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.reuseIdentifier)
         viewInstance.tableView.delegate = self
         viewInstance.tableView.dataSource = self
-        
-        DispatchQueue.main.async {
-            self.viewInstance.tableView.reloadData()
-        }
     }
     
     private func setupCell(_ indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +80,7 @@ extension HomeScreenViewController: HomeScreenViewDelegate {}
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.characters?.count ?? 3
+        viewModel.characters?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

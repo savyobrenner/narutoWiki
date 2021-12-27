@@ -13,7 +13,11 @@ final class HomeScreenViewModel: NSObject {
     
     private let homeScreenServices: HomeScreenServicesProtocol
     
-    var characters: [Character]?
+    var characters: [Character]? {
+        didSet {
+            reloadTableView?()
+        }
+    }
     var reloadTableView: (() -> Void)?
     
     init(homeScreenServices: HomeScreenServicesProtocol) {
