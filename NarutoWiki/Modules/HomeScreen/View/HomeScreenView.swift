@@ -18,8 +18,8 @@ final class HomeScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubview(tableView)
         addSubview(headerView)
+        addSubview(tableView)
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: topAnchor),
@@ -46,7 +46,9 @@ final class HomeScreenView: UIView {
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.layer.cornerRadius = 10
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = .zero
+        tableView.backgroundColor = .systemGray6
         return tableView
     }()
     

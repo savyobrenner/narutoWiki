@@ -55,9 +55,36 @@ final class HomeScreenViewController: UIViewController {
     
     private func setupTableView() {
         viewInstance.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.reuseIdentifier)
-        viewInstance.tableView.delegate = viewModel
-        viewInstance.tableView.dataSource = viewModel
+        viewInstance.tableView.delegate = self
+        viewInstance.tableView.dataSource = self
+        
+        DispatchQueue.main.async {
+            self.viewInstance.tableView.reloadData()
+        }
+    }
+    
+    private func setupCell() -> UITableViewCell {
+        guard let cell = viewInstance.tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell() }
+        return cell
     }
 }
 
 extension HomeScreenViewController: HomeScreenViewDelegate {}
+
+extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.characters?.count ?? 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        setupCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("SELECIONADO")
+    }
+}

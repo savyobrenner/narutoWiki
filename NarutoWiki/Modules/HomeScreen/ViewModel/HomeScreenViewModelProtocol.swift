@@ -10,6 +10,8 @@
 import Foundation
 import UIKit
 
-protocol HomeScreenViewModelProtocol: UITableViewDelegate, UITableViewDataSource { }
+protocol HomeScreenViewModelProtocol {
+    var characters: [Character]? { get }
+}
 
 

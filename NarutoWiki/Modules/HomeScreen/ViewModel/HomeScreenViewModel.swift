@@ -10,20 +10,10 @@
 import UIKit
 
 final class HomeScreenViewModel: NSObject {
-    
+    var characters: [Character]?
 }
 
 // MARK: - Extensions
-extension HomeScreenViewModel: HomeScreenViewModelProtocol { }
-
-// MARK: - TableView
-extension HomeScreenViewModel: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { fatalError("Could not dequeue cell with identifier: \(CharacterTableViewCell.reuseIdentifier)") }
-        return cell
-    }
+extension HomeScreenViewModel: HomeScreenViewModelProtocol {
+   
 }
