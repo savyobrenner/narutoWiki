@@ -27,7 +27,7 @@ case fetchAllRequests
     
     var endPoint: String {
         switch self {
-        case .fetchAllRequests: return "/characters"
+        case .fetchAllRequests: return "characters"
         }
     }
 }

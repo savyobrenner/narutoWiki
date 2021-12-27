@@ -11,7 +11,9 @@ import Foundation
 import UIKit
 
 protocol HomeScreenViewModelProtocol {
+    var reloadTableView: (() -> Void)? { get set }
     var characters: [Character]? { get }
+    func viewDidLoad()
 }
 
 

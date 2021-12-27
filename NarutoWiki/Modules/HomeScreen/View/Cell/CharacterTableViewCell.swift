@@ -24,6 +24,8 @@ class CharacterTableViewCell: UITableViewCell {
     private lazy var cellImageView: UIImageView = {
         let cellImageView = UIImageView()
         cellImageView.image = .init(named: "header")
+        cellImageView.layer.cornerRadius = 40
+        cellImageView.clipsToBounds = true
         cellImageView.translatesAutoresizingMaskIntoConstraints = false
         return cellImageView
     }()

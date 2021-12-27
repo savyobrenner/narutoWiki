@@ -22,7 +22,7 @@ final class HomeScreenViewController: UIViewController {
     
     // MARK: - Life Cycle
     
-    init(viewModel: HomeScreenViewModelProtocol = HomeScreenViewModel()) {
+    init(viewModel: HomeScreenViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,6 +35,7 @@ final class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupTableView()
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Class Configurations

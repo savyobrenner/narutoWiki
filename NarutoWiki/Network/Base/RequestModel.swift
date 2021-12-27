@@ -28,7 +28,7 @@ protocol RequestModel {
 extension RequestModel {
     
     var baseURL: String {
-        return "https://naruto-api.herokuapp.com/api/"
+        return "https://naruto-api.herokuapp.com/api"
     }
     
     var apiVersion: String {

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HomeScreenServicesProtocol {
-    func fetchAllCharacters(completion: @escaping (Result<Character, ErrorModel>) -> Void )
+    func fetchAllCharacters(completion: @escaping (Result<[Character], ErrorModel>) -> Void )
 }
 
 class HomeScreenServices: HomeScreenServicesProtocol {
@@ -19,9 +19,9 @@ class HomeScreenServices: HomeScreenServicesProtocol {
         self.serviceLayer = serviceLayer
     }
     
-    func fetchAllCharacters(completion: @escaping (Result<Character, ErrorModel>) -> Void) {
+    func fetchAllCharacters(completion: @escaping (Result<[Character], ErrorModel>) -> Void) {
         let request = CharactersRequest.fetchAllRequests
-        serviceLayer.sendRequest(type: Character.self, requestModel: request) { result in
+        serviceLayer.sendRequest(type: [Character].self, requestModel: request) { result in
             completion(result)
         }
     }

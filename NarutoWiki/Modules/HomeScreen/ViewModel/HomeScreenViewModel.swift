@@ -10,10 +10,30 @@
 import UIKit
 
 final class HomeScreenViewModel: NSObject {
+    
+    private let homeScreenServices: HomeScreenServicesProtocol
+    
     var characters: [Character]?
+    var reloadTableView: (() -> Void)?
+    
+    init(homeScreenServices: HomeScreenServicesProtocol) {
+        self.homeScreenServices = homeScreenServices
+    }
+    
+    func viewDidLoad() {
+        fetchCharacters()
+    }
+    
+    private func fetchCharacters() {
+        homeScreenServices.fetchAllCharacters { result in
+            switch result {
+            case .success(let characterList):
+                self.characters = characterList
+            case .failure: break
+            }
+        }
+    }
 }
 
 // MARK: - Extensions
-extension HomeScreenViewModel: HomeScreenViewModelProtocol {
-   
-}
+extension HomeScreenViewModel: HomeScreenViewModelProtocol { }
