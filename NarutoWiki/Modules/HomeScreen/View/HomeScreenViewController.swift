@@ -11,11 +11,13 @@ import UIKit
 
 final class HomeScreenViewController: UIViewController {
     
-    // MARK: - Outlets
-    
     // MARK: - Class properties
     private var viewModel: HomeScreenViewModelProtocol
     private lazy var viewInstance = HomeScreenView()
+    
+    private enum Constants {
+        static let cellHeight: CGFloat = 100.0
+    }
 
     // MARK: - Public properties
 
@@ -89,6 +91,6 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        Constants.cellHeight
     }
 }

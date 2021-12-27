@@ -11,6 +11,16 @@ class CharacterTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "CharacterTableViewCell"
     
+    private enum Strings {
+        static let defaultIconImage = "no-photo"
+        static let defaultCharacterDescription = "Undefined, Private information, BloodType - Undefined"
+        static let defaultCharacterName = "Private Character"
+        static let defaultRoleDescription = "Character Unemployed"
+        static let undefinedString = "Undefined"
+        static let privateString = "Private Information"
+        static let bloodTypeString = "Blood Type"
+    }
+    
     private lazy var cellView: UIView = {
         let cellView = UIView()
         cellView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +34,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var cellImageView: UIImageView = {
         let cellImageView = UIImageView()
-        cellImageView.image = .init(named: "no-photo")
+        cellImageView.image = .init(named: Strings.defaultIconImage)
         cellImageView.contentMode = .redraw
         cellImageView.layer.cornerRadius = 40
         cellImageView.clipsToBounds = true
@@ -34,7 +44,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterDescription: UILabel = {
         let cellTitle = UILabel()
-        cellTitle.text = "Female, 20 years, Blood Type - AB"
+        cellTitle.text = Strings.defaultCharacterDescription
         cellTitle.textColor = .black
         cellTitle.font = .systemFont(ofSize: 12.0, weight: .regular)
         cellTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +53,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterName: UILabel = {
         let cellDescription = UILabel()
-        cellDescription.text = "Hinata Hyuga"
+        cellDescription.text = Strings.defaultCharacterName
         cellDescription.textColor = .black
         cellDescription.font = .systemFont(ofSize: 15.0, weight: .bold)
         cellDescription.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +62,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var roleDescription: UILabel = {
         let clanLabel = UILabel()
-        clanLabel.text = "Hokage"
+        clanLabel.text = Strings.defaultRoleDescription
         clanLabel.textColor = .black
         clanLabel.font = .systemFont(ofSize: 12.0, weight: .medium)
         clanLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -87,16 +97,16 @@ class CharacterTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        characterDescription.text = "Undefined, Private information, BloodType - Undefined"
-        characterName.text = "Private Character"
-        roleDescription.text = "Character Unemployed"
-        cellImageView.image = .init(named: "no-photo")
+        characterDescription.text = Strings.defaultCharacterDescription
+        characterName.text = Strings.defaultCharacterName
+        roleDescription.text = Strings.defaultRoleDescription
+        cellImageView.image = .init(named: Strings.defaultIconImage)
     }
     
     func setupCell(character: Character) {
-        characterDescription.text = "\(character.info?.sex?.rawValue ?? ""), \(character.info?.age ?? "Private information"), BloodType - \(character.info?.bloodType?.rawValue ?? "Undefined")"
-        characterName.text = character.name ?? "Private Character"
-        roleDescription.text = character.info?.role ?? "Character Unemployed"
+        characterDescription.text = "\(character.info?.sex?.rawValue ?? Strings.undefinedString), \(character.info?.age ?? Strings.privateString), \(Strings.bloodTypeString) - \(character.info?.bloodType?.rawValue ?? Strings.undefinedString)"
+        characterName.text = character.name ?? Strings.defaultCharacterName
+        roleDescription.text = character.info?.role ?? Strings.defaultRoleDescription
         downloadImage(from: character.images?.first)
     }
     

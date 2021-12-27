@@ -13,6 +13,11 @@ protocol HomeScreenViewDelegate: AnyObject {}
 
 final class HomeScreenView: UIView {
     
+    private enum Strings {
+        static let headerImageView = "header"
+        static let headerTitle = "NARUTO WIKI"
+    }
+    
     weak var delegate: HomeScreenViewDelegate?
     
     override init(frame: CGRect) {
@@ -63,14 +68,14 @@ final class HomeScreenView: UIView {
     
     private lazy var headerImageView: UIImageView = {
         let headerImageView = UIImageView()
-        headerImageView.image = .init(named: "header")
+        headerImageView.image = .init(named: Strings.headerImageView)
         headerImageView.translatesAutoresizingMaskIntoConstraints = false
         return headerImageView
     }()
     
     private lazy var headerTitle: UILabel = {
         let label = UILabel()
-        label.text = "NARUTO WIKI"
+        label.text = Strings.headerTitle
         label.textColor = .white
         label.font = .systemFont(ofSize: 24.0, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
