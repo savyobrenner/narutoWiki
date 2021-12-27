@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		2968CB14277934CA00E6304A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB13277934CA00E6304A /* AppDelegate.swift */; };
 		2968CB16277934CA00E6304A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB15277934CA00E6304A /* SceneDelegate.swift */; };
-		2968CB18277934CA00E6304A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB17277934CA00E6304A /* ViewController.swift */; };
-		2968CB1B277934CA00E6304A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2968CB19277934CA00E6304A /* Main.storyboard */; };
 		2968CB1D277934CB00E6304A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2968CB1C277934CB00E6304A /* Assets.xcassets */; };
 		2968CB20277934CB00E6304A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2968CB1E277934CB00E6304A /* LaunchScreen.storyboard */; };
+		2968CB2F2779355A00E6304A /* HomeScreenViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB2A2779355A00E6304A /* HomeScreenViewModelProtocol.swift */; };
+		2968CB302779355A00E6304A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB2B2779355A00E6304A /* HomeScreenViewController.swift */; };
+		2968CB322779355A00E6304A /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB2D2779355A00E6304A /* HomeScreenView.swift */; };
+		2968CB332779355A00E6304A /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB2E2779355A00E6304A /* HomeScreenViewModel.swift */; };
+		2968CB36277940B200E6304A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB35277940B200E6304A /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2968CB10277934CA00E6304A /* NarutoWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NarutoWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2968CB13277934CA00E6304A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2968CB15277934CA00E6304A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2968CB17277934CA00E6304A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2968CB1A277934CA00E6304A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2968CB1C277934CB00E6304A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2968CB1F277934CB00E6304A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2968CB21277934CB00E6304A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2968CB2A2779355A00E6304A /* HomeScreenViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelProtocol.swift; sourceTree = "<group>"; };
+		2968CB2B2779355A00E6304A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		2968CB2D2779355A00E6304A /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		2968CB2E2779355A00E6304A /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		2968CB35277940B200E6304A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		2968CB12277934CA00E6304A /* NarutoWiki */ = {
 			isa = PBXGroup;
 			children = (
-				2968CB13277934CA00E6304A /* AppDelegate.swift */,
-				2968CB15277934CA00E6304A /* SceneDelegate.swift */,
-				2968CB17277934CA00E6304A /* ViewController.swift */,
-				2968CB19277934CA00E6304A /* Main.storyboard */,
-				2968CB1C277934CB00E6304A /* Assets.xcassets */,
-				2968CB1E277934CB00E6304A /* LaunchScreen.storyboard */,
+				2968CB342779404200E6304A /* Models */,
+				2968CB28277934E000E6304A /* Modules */,
+				2968CB27277934DA00E6304A /* Application */,
 				2968CB21277934CB00E6304A /* Info.plist */,
 			);
 			path = NarutoWiki;
+			sourceTree = "<group>";
+		};
+		2968CB27277934DA00E6304A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB1E277934CB00E6304A /* LaunchScreen.storyboard */,
+				2968CB1C277934CB00E6304A /* Assets.xcassets */,
+				2968CB13277934CA00E6304A /* AppDelegate.swift */,
+				2968CB15277934CA00E6304A /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2968CB28277934E000E6304A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB292779350500E6304A /* HomeScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2968CB292779350500E6304A /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB2A2779355A00E6304A /* HomeScreenViewModelProtocol.swift */,
+				2968CB2B2779355A00E6304A /* HomeScreenViewController.swift */,
+				2968CB2D2779355A00E6304A /* HomeScreenView.swift */,
+				2968CB2E2779355A00E6304A /* HomeScreenViewModel.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		2968CB342779404200E6304A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2968CB35277940B200E6304A /* Character.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +168,6 @@
 			files = (
 				2968CB20277934CB00E6304A /* LaunchScreen.storyboard in Resources */,
 				2968CB1D277934CB00E6304A /* Assets.xcassets in Resources */,
-				2968CB1B277934CA00E6304A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +178,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2968CB18277934CA00E6304A /* ViewController.swift in Sources */,
 				2968CB14277934CA00E6304A /* AppDelegate.swift in Sources */,
+				2968CB332779355A00E6304A /* HomeScreenViewModel.swift in Sources */,
+				2968CB36277940B200E6304A /* Character.swift in Sources */,
+				2968CB302779355A00E6304A /* HomeScreenViewController.swift in Sources */,
+				2968CB322779355A00E6304A /* HomeScreenView.swift in Sources */,
 				2968CB16277934CA00E6304A /* SceneDelegate.swift in Sources */,
+				2968CB2F2779355A00E6304A /* HomeScreenViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2968CB19277934CA00E6304A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2968CB1A277934CA00E6304A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2968CB1E277934CB00E6304A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +330,6 @@
 				INFOPLIST_FILE = NarutoWiki/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +357,6 @@
 				INFOPLIST_FILE = NarutoWiki/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
