@@ -46,7 +46,6 @@ final class HomeScreenView: UIView {
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .singleLine
         tableView.separatorInset = .zero
         tableView.backgroundColor = .systemGray6
         return tableView

@@ -63,8 +63,9 @@ final class HomeScreenViewController: UIViewController {
         }
     }
     
-    private func setupCell() -> UITableViewCell {
+    private func setupCell(_ indexPath: IndexPath) -> UITableViewCell {
         guard let cell = viewInstance.tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell() }
+        cell.setupCell(index: indexPath.row)
         return cell
     }
 }
@@ -73,11 +74,13 @@ extension HomeScreenViewController: HomeScreenViewDelegate {}
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.characters?.count ?? 2
+        viewModel.characters?.count ?? 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        setupCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell () }
+        cell.setupCell(index: indexPath.row)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
