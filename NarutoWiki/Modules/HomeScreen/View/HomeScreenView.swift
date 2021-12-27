@@ -40,7 +40,7 @@ final class HomeScreenView: UIView {
             headerImageView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             headerImageView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
             headerTitle.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            headerTitle.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            headerTitle.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
         ])
     }
     

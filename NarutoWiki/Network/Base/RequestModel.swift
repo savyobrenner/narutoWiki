@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 typealias APIParams = [String : Any]?
 typealias APIHeaders = [String : String]?
 

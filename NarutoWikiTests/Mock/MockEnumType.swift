@@ -9,6 +9,7 @@ import Foundation
 
 enum MockEnumTypeSuccess: String {
     case fetchAllCharactersSuccess = "AllCharacters"
+    case deleteCharSuccess = "DeleteCharSuccess"
 }
 
 enum MockEnumTypeError: String {

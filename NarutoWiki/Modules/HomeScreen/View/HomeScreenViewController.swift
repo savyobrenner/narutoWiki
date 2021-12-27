@@ -40,7 +40,6 @@ final class HomeScreenViewController: UIViewController {
         bindUI()
         viewModel.viewDidLoad()
     }
-    
     // MARK: - Class Configurations
     
     // MARK: - UIActions
