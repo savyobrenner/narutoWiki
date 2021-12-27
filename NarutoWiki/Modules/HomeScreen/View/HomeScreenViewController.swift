@@ -54,9 +54,9 @@ final class HomeScreenViewController: UIViewController {
     }
     
     private func setupTableView() {
+        viewInstance.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.reuseIdentifier)
         viewInstance.tableView.delegate = viewModel
         viewInstance.tableView.dataSource = viewModel
-        viewInstance.tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.reuseIdentifier)
     }
 }
 

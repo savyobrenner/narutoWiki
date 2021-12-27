@@ -19,11 +19,11 @@ extension HomeScreenViewModel: HomeScreenViewModelProtocol { }
 // MARK: - TableView
 extension HomeScreenViewModel: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { fatalError("Could not dequeue cell with identifier: \(CharacterTableViewCell.reuseIdentifier)") }
         return cell
     }
 }
