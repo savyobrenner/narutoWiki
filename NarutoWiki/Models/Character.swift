@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - WelcomeElement
+// MARK: - Character
 struct Character: Codable {
     let about: [String]?
     let info: Info?

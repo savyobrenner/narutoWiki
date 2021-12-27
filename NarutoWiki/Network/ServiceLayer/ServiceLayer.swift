@@ -11,7 +11,7 @@ class ServiceLayer: ServiceLayerProtocol {
     
     private let urlSession = URLSession.shared
     
-    func sendRequest<T: Codable>(requestModel: RequestModel, completion: @escaping (Result<T, ErrorModel>) -> Void) {
+    func sendRequest<T: Codable>(type: T.Type, requestModel: RequestModel, completion: @escaping (Result<T, ErrorModel>) -> Void) {
         
         var request = URLRequest(url: requestModel.url)
         request.httpMethod = requestModel.method
@@ -23,14 +23,13 @@ class ServiceLayer: ServiceLayerProtocol {
             
             guard response?.statusCode == 200,
                   let data = data,
-                  let responseModel = try? JSONDecoder().decode(ResponseModel<T>.self, from: data),
-                  let object = responseModel.object
+                  let responseModel = try? JSONDecoder().decode(T.self, from: data)
             else {
                 completion(.failure(.genericError))
                 return
             }
             
-            completion(Result.success(object))
+            completion(Result.success(responseModel))
         }
         
         task.resume()

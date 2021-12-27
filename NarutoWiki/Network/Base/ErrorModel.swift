@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum ErrorModel: Error {
     case genericError
 }
