@@ -23,7 +23,18 @@
 		2968CB4927794B6800E6304A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB4827794B6800E6304A /* ErrorModel.swift */; };
 		2968CB4E27794DC100E6304A /* HomeScreenServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB4D27794DC100E6304A /* HomeScreenServices.swift */; };
 		2968CB512779605900E6304A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB502779605900E6304A /* CharacterTableViewCell.swift */; };
+		296EE251277A2A9C00E380AF /* NarutoWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296EE250277A2A9C00E380AF /* NarutoWikiTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		296EE252277A2A9C00E380AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2968CB08277934CA00E6304A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2968CB0F277934CA00E6304A;
+			remoteInfo = NarutoWiki;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2968CB10277934CA00E6304A /* NarutoWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NarutoWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +55,19 @@
 		2968CB4827794B6800E6304A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		2968CB4D27794DC100E6304A /* HomeScreenServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenServices.swift; sourceTree = "<group>"; };
 		2968CB502779605900E6304A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		296EE24E277A2A9C00E380AF /* NarutoWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NarutoWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		296EE250277A2A9C00E380AF /* NarutoWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoWikiTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2968CB0D277934CA00E6304A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296EE24B277A2A9C00E380AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				2968CB12277934CA00E6304A /* NarutoWiki */,
+				296EE24F277A2A9C00E380AF /* NarutoWikiTests */,
 				2968CB11277934CA00E6304A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				2968CB10277934CA00E6304A /* NarutoWiki.app */,
+				296EE24E277A2A9C00E380AF /* NarutoWikiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +215,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		296EE24F277A2A9C00E380AF /* NarutoWikiTests */ = {
+			isa = PBXGroup;
+			children = (
+				296EE250277A2A9C00E380AF /* NarutoWikiTests.swift */,
+			);
+			path = NarutoWikiTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +243,24 @@
 			productReference = 2968CB10277934CA00E6304A /* NarutoWiki.app */;
 			productType = "com.apple.product-type.application";
 		};
+		296EE24D277A2A9C00E380AF /* NarutoWikiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 296EE256277A2A9C00E380AF /* Build configuration list for PBXNativeTarget "NarutoWikiTests" */;
+			buildPhases = (
+				296EE24A277A2A9C00E380AF /* Sources */,
+				296EE24B277A2A9C00E380AF /* Frameworks */,
+				296EE24C277A2A9C00E380AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				296EE253277A2A9C00E380AF /* PBXTargetDependency */,
+			);
+			name = NarutoWikiTests;
+			productName = NarutoWikiTests;
+			productReference = 296EE24E277A2A9C00E380AF /* NarutoWikiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,6 +273,10 @@
 				TargetAttributes = {
 					2968CB0F277934CA00E6304A = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					296EE24D277A2A9C00E380AF = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 2968CB0F277934CA00E6304A;
 					};
 				};
 			};
@@ -242,6 +294,7 @@
 			projectRoot = "";
 			targets = (
 				2968CB0F277934CA00E6304A /* NarutoWiki */,
+				296EE24D277A2A9C00E380AF /* NarutoWikiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +306,13 @@
 			files = (
 				2968CB20277934CB00E6304A /* LaunchScreen.storyboard in Resources */,
 				2968CB1D277934CB00E6304A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296EE24C277A2A9C00E380AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +340,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		296EE24A277A2A9C00E380AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296EE251277A2A9C00E380AF /* NarutoWikiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		296EE253277A2A9C00E380AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2968CB0F277934CA00E6304A /* NarutoWiki */;
+			targetProxy = 296EE252277A2A9C00E380AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2968CB1E277934CB00E6304A /* LaunchScreen.storyboard */ = {
@@ -464,6 +540,42 @@
 			};
 			name = Release;
 		};
+		296EE254277A2A9C00E380AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q2ND2U87N3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brenner.NarutoWikiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NarutoWiki.app/NarutoWiki";
+			};
+			name = Debug;
+		};
+		296EE255277A2A9C00E380AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q2ND2U87N3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brenner.NarutoWikiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NarutoWiki.app/NarutoWiki";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,6 +593,15 @@
 			buildConfigurations = (
 				2968CB25277934CB00E6304A /* Debug */,
 				2968CB26277934CB00E6304A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		296EE256277A2A9C00E380AF /* Build configuration list for PBXNativeTarget "NarutoWikiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				296EE254277A2A9C00E380AF /* Debug */,
+				296EE255277A2A9C00E380AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
