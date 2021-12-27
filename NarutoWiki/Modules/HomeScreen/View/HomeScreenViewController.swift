@@ -70,8 +70,9 @@ final class HomeScreenViewController: UIViewController {
     }
     
     private func setupCell(_ indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = viewInstance.tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell() }
-        cell.setupCell(index: indexPath.row)
+        guard let cell = viewInstance.tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell,
+              let character = viewModel.characters?[indexPath.row] else { return UITableViewCell() }
+        cell.setupCell(character: character)
         return cell
     }
 }
@@ -84,16 +85,10 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.reuseIdentifier) as? CharacterTableViewCell else { return UITableViewCell () }
-        cell.setupCell(index: indexPath.row)
-        return cell
+        setupCell(indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("SELECIONADO")
     }
 }

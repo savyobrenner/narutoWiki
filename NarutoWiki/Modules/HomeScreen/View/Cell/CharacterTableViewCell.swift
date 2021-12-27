@@ -16,8 +16,9 @@ class CharacterTableViewCell: UITableViewCell {
         cellView.translatesAutoresizingMaskIntoConstraints = false
         cellView.backgroundColor = .red
         cellView.addSubview(cellImageView)
-        cellView.addSubview(cellTitle)
-        cellView.addSubview(cellDescription)
+        cellView.addSubview(characterDescription)
+        cellView.addSubview(characterName)
+        cellView.addSubview(roleDescription)
         return cellView
     }()
     
@@ -30,29 +31,29 @@ class CharacterTableViewCell: UITableViewCell {
         return cellImageView
     }()
     
-    private lazy var cellTitle: UILabel = {
+    private lazy var characterDescription: UILabel = {
         let cellTitle = UILabel()
-        cellTitle.text = "NARUTO WIKI"
+        cellTitle.text = "Female, 20 years, Blood Type - AB"
         cellTitle.textColor = .black
-        cellTitle.font = .systemFont(ofSize: 14.0, weight: .bold)
+        cellTitle.font = .systemFont(ofSize: 12.0, weight: .regular)
         cellTitle.translatesAutoresizingMaskIntoConstraints = false
         return cellTitle
     }()
     
-    private lazy var cellDescription: UILabel = {
+    private lazy var characterName: UILabel = {
         let cellDescription = UILabel()
-        cellDescription.text = "NARUTO WIKI"
+        cellDescription.text = "Hinata Hyuga"
         cellDescription.textColor = .black
-        cellDescription.font = .systemFont(ofSize: 14.0, weight: .bold)
+        cellDescription.font = .systemFont(ofSize: 15.0, weight: .bold)
         cellDescription.translatesAutoresizingMaskIntoConstraints = false
         return cellDescription
     }()
     
-    private lazy var clanLabel: UILabel = {
+    private lazy var roleDescription: UILabel = {
         let clanLabel = UILabel()
-        clanLabel.text = "NARUTO WIKI"
+        clanLabel.text = "Hokage"
         clanLabel.textColor = .black
-        clanLabel.font = .systemFont(ofSize: 14.0, weight: .bold)
+        clanLabel.font = .systemFont(ofSize: 12.0, weight: .medium)
         clanLabel.translatesAutoresizingMaskIntoConstraints = false
         return clanLabel
     }()
@@ -71,10 +72,12 @@ class CharacterTableViewCell: UITableViewCell {
             cellImageView.leadingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: 10),
             cellImageView.heightAnchor.constraint(equalToConstant: 80),
             cellImageView.widthAnchor.constraint(equalToConstant: 80),
-            cellTitle.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 10),
-            cellTitle.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10),
-            cellDescription.topAnchor.constraint(equalTo: cellTitle.bottomAnchor, constant: 10),
-            cellDescription.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10)
+            characterDescription.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 10),
+            characterDescription.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10),
+            characterName.topAnchor.constraint(equalTo: characterDescription.bottomAnchor, constant: 10),
+            characterName.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10),
+            roleDescription.topAnchor.constraint(equalTo: characterName.bottomAnchor, constant: 10),
+            roleDescription.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10)
         ])
     }
     
@@ -82,11 +85,9 @@ class CharacterTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(index: Int) {
-        if index == 0 {
-            self.cellTitle.text = "Posicoes"
-        } else {
-            self.cellTitle.text = "Com você"
-        }
+    func setupCell(character: Character) {
+        characterDescription.text = "\(character.info?.sex?.rawValue ?? ""), \(character.info?.age ?? "Private information"), BloodType - \(character.info?.bloodType?.rawValue ?? "Undefined")"
+        characterName.text = character.name ?? "Private Character"
+        roleDescription.text = character.info?.role ?? "Character Unemployed"
     }
 }

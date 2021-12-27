@@ -48,6 +48,7 @@ final class HomeScreenView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset = .zero
         tableView.backgroundColor = .systemGray6
+        tableView.allowsSelection = false
         return tableView
     }()
     
