@@ -24,6 +24,11 @@
 		2968CB4E27794DC100E6304A /* HomeScreenServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB4D27794DC100E6304A /* HomeScreenServices.swift */; };
 		2968CB512779605900E6304A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968CB502779605900E6304A /* CharacterTableViewCell.swift */; };
 		296EE251277A2A9C00E380AF /* NarutoWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296EE250277A2A9C00E380AF /* NarutoWikiTests.swift */; };
+		296EE259277A2D8700E380AF /* ServiceLayerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296EE258277A2D8700E380AF /* ServiceLayerMock.swift */; };
+		296EE25C277A308700E380AF /* MockEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296EE25B277A308700E380AF /* MockEnumType.swift */; };
+		296EE25F277A30CB00E380AF /* AllCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = 296EE25E277A30CB00E380AF /* AllCharacters.json */; };
+		296EE261277A313E00E380AF /* GenericError.json in Resources */ = {isa = PBXBuildFile; fileRef = 296EE260277A313E00E380AF /* GenericError.json */; };
+		296EE265277A31A500E380AF /* HomeScreenServicesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296EE264277A31A500E380AF /* HomeScreenServicesTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		2968CB502779605900E6304A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		296EE24E277A2A9C00E380AF /* NarutoWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NarutoWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296EE250277A2A9C00E380AF /* NarutoWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoWikiTests.swift; sourceTree = "<group>"; };
+		296EE258277A2D8700E380AF /* ServiceLayerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayerMock.swift; sourceTree = "<group>"; };
+		296EE25B277A308700E380AF /* MockEnumType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEnumType.swift; sourceTree = "<group>"; };
+		296EE25E277A30CB00E380AF /* AllCharacters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllCharacters.json; sourceTree = "<group>"; };
+		296EE260277A313E00E380AF /* GenericError.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GenericError.json; sourceTree = "<group>"; };
+		296EE264277A31A500E380AF /* HomeScreenServicesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenServicesTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,9 +228,46 @@
 		296EE24F277A2A9C00E380AF /* NarutoWikiTests */ = {
 			isa = PBXGroup;
 			children = (
+				296EE262277A316400E380AF /* Module */,
+				296EE257277A2D7500E380AF /* Mock */,
 				296EE250277A2A9C00E380AF /* NarutoWikiTests.swift */,
 			);
 			path = NarutoWikiTests;
+			sourceTree = "<group>";
+		};
+		296EE257277A2D7500E380AF /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				296EE25D277A30B900E380AF /* Files */,
+				296EE25B277A308700E380AF /* MockEnumType.swift */,
+				296EE258277A2D8700E380AF /* ServiceLayerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		296EE25D277A30B900E380AF /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				296EE25E277A30CB00E380AF /* AllCharacters.json */,
+				296EE260277A313E00E380AF /* GenericError.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		296EE262277A316400E380AF /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				296EE263277A319300E380AF /* Services */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		296EE263277A319300E380AF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				296EE264277A31A500E380AF /* HomeScreenServicesTest.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +360,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296EE261277A313E00E380AF /* GenericError.json in Resources */,
+				296EE25F277A30CB00E380AF /* AllCharacters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296EE265277A31A500E380AF /* HomeScreenServicesTest.swift in Sources */,
 				296EE251277A2A9C00E380AF /* NarutoWikiTests.swift in Sources */,
+				296EE259277A2D8700E380AF /* ServiceLayerMock.swift in Sources */,
+				296EE25C277A308700E380AF /* MockEnumType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
